@@ -10,3 +10,11 @@
 .navbar-dark .navbar-nav .nav-link {
   color: #fff;
 }
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
