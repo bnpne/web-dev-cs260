@@ -1,0 +1,42 @@
+
+body {
+    background-color: #fffff1;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.about {
+    text-align: center;
+    font-style: italic;
+}
+
+.intro  {
+    font-size: 150;
+    text-align: left;
+    display:  block;
+    margin-left:  auto;
+    margin-right:  auto;
+    position: absolute;
+    width: 500px;
+}
+
+nav ul {
+    list-style-type: none;
+    overflow: hidden;
+  }
+  
+nav  li {
+float: left;
+}
+
+nav li a {
+display: block;
+color: black;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+background-color: #111;
+}
