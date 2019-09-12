@@ -12,11 +12,26 @@ body {
 .intro  {
     font-size: 150;
     text-align: left;
-    display:  block;
-    margin-left:  auto;
-    margin-right:  auto;
-    position: absolute;
+    display:  inline-block;
+
+
     width: 500px;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+    display: inline-block;
+}
+
+img {
+    align-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav ul {
@@ -38,5 +53,5 @@ text-decoration: none;
 
 /* Change the link color to #111 (black) on hover */
 nav li a:hover {
-background-color: #111;
+background-color: gray;
 }
