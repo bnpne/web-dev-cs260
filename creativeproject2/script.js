@@ -1,6 +1,6 @@
 document.getElementById("getData").addEventListener("click", function(event) {
     event.preventDefault();
-    const index = document.getElementById("holidayInput").value;
+    const index = document.getElementById("holidayInput").value  - 1;
     if (index === "")
       return;
     console.log(index);
@@ -15,9 +15,16 @@ document.getElementById("getData").addEventListener("click", function(event) {
     
         let results = "";
       results += '<h2>' + json.holidays[index].name + '</h2>';
-      results += "<p>";
-      results += 
+      results += "<p>Date: " + json.holidays[index].date + "</p>";
+      results += "<p>Observed Publicly: " 
+      if (json.holidays[index].public == true) {
+        results += "Yes";
+      }
+      else {
+        results += "No";
+      }
       results += "</p>";
+      
       document.getElementById("results").innerHTML = results;
       });
       
