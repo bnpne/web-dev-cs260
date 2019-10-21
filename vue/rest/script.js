@@ -12,18 +12,17 @@ var app = new Vue({
           console.log("URL " + url);
           fetch(url)
             .then((data) => {
-                return (data.json());
+              return (data.json());
             })
-            .then ((citylist) => {
-                console.log("CityList");
-                console.log(citylist);
-                this.cities = [];
-                
-                for (let i = 0; i < citylist.length; i++) {
-                    console.log(citylist[i].city);
-                    this.cities.push({ name: citylist[i].city });
-                };
-                console.log("Got Citylist");
+            .then((citylist) => {
+              console.log("CityList");
+              console.log(citylist);
+              this.cities = [];
+              for (let i = 0; i < citylist.length; i++) {
+                console.log(citylist[i].city);
+                this.cities.push({ name: citylist[i].city });
+              };
+              console.log("Got Citylist");
             });
       },
   },
