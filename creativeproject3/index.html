@@ -3,34 +3,33 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>DnD Classes</title>
-  <link href="https://fonts.googleapis.com/css?family=Grenze&display=swap" rel="stylesheet">
+  <title>Number Info</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css" /> 
 </head>
 
-<h1>Welcome to the DnD Class Encyclopedia!</h1>
-<p>Here you will learn about the proficiencies and specializations for each class.</p>
-
-<!-- Get Dnd classes and list the proficiencies and the specializations for each class -->
-
-<h2>Enter a class from the list:</h2>
-<p>Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard</p>
+<h1>Random Number Info</h1> <br>
+<h2>Enter a number or get a random number!</h2>
 
 <body>
   <div id="app">
     <form>
-      <input type="text" v-model="number">
-      <button v-on:click.prevent="getClass">Go!</button>
+      <input id="box" type="text" v-model="number"> <br>
+      <button id="button" v-on:click.prevent="getInfo">Go!</button><br>
+      <button id="button" v-on:click.prevent="getRandom">Random Number</button>
     </form>
-    <!-- <ul>
-      <li v-for="item in cities">
-        {{ item.name }}
-      </li>
-    </ul> -->
+    
+    <div id="result">{{result.text}}</div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
   <script src="script.js"></script>
 </body>
+
+<footer>
+  <p>Copywrite Ben Paine 2019 <a href="https://github.com/BYUCS260/cs260/creativeproject3">GitHub</a></p>
+    
+</footer>
 
 </html>
