@@ -7,12 +7,14 @@ var app = new Vue({
   methods: {
     fetchREST() {
       console.log("In Fetch " + this.prefix);
+
       var url = "http://bioresearch.byu.edu/cs260/jquery/getcity.cgi?q=" + this.prefix;
       console.log("URL " + url);
       fetch(url)
         .then((data) => {
           return (data.json());
         })
+
         .then((citylist) => {
           console.log("CityList");
           console.log(citylist);
@@ -21,11 +23,9 @@ var app = new Vue({
             console.log(citylist[i].city);
             this.cities.push({ name: citylist[i].city });
           };
+          
           console.log("Got Citylist");
         });
     },
-    
   },
-  
 });
- 
