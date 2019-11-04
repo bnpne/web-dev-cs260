@@ -14,7 +14,9 @@ var app = new Vue({
     async getpokis() {
       // `this` points to the vm instance
       console.log("get pokis");
-      var url = "http://yourserver:4200/pokemon";
+      var url = "http://localhost:4200/pokemon";
+      // "https://class.benpaine.com:4200/pokemon"
+
       try {
         let response = await axios.get(url);
         this.pokis = response.data;
@@ -26,7 +28,8 @@ var app = new Vue({
       }
     },
     addItem() {
-      var url = "http://yourserver:4200/pokemon";
+      var url = "http://localhost:4200/pokemon";
+      // "https://class.benpaine.com:4200/pokemon"
       axios.post(url, {
           name: this.pokiName,
           avatarUrl: this.pokiURL
