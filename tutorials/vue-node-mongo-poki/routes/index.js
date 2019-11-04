@@ -10,7 +10,7 @@ var MongoClient = mongodb.MongoClient;
 var dbUrl = 'mongodb://localhost:27017/';
 
 // we will use this variable later to insert and retrieve a "collection" of data
-var collection
+var collection;
 
 // Use connect method to connect to the Server
 MongoClient.connect(dbUrl, { useNewUrlParser: true }, function(err, client) {
@@ -21,11 +21,26 @@ MongoClient.connect(dbUrl, { useNewUrlParser: true }, function(err, client) {
     // HURRAY!! We are connected. :)
     console.log('Connection established to', dbUrl);
     
-    /**
-     * TODO: insert data here, once we've successfully connected
-     */
+    var db = client.db('pokemon'); //Connect to the database pokemon
+    db.createCollection('poke', function(err, result) { // If it exists, it will just connect to it
+      collection = result;
+      // Only do the insert if the collection is empty
+      collection.stats(function(err, stats) {
+        if (err) { console.log(err) }
+        if (stats.count == 0) { // If we havent inserted before, put the default in
+          collection.insertMany(pokemon, function(err, result) {
+            if (err) { console.log(err) }
+            else {
+              console.log('Inserted documents into the "poke" collection. The documents inserted with "_id" are:', result.length, result);
+            }
+          });
+        }
+      });
+    }); // Get the collection
   }
 });
+
+
 
 
 /* GET home page. */
