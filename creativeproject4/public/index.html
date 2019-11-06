@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Yes/No</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="stylesheets/style.css" /> 
+</head>
+
+<body>
+  <div id="app">
+    <h1>Ask a Yes/No Question</h1>
+    <form v-on:submit.prevent="getanswer">
+      <input id="box" type="text"> <br>
+      <button type="submit">Ask</button>
+      
+    </form>
+    <div id="main"></div>
+  </div>
+  
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+<script src="javascripts/script.js"></script>
+
+<footer>
+  <p>Copywrite Ben Paine 2019 <a href="https://github.com/BYUCS260/cs260/creativeproject3">GitHub</a></p>
+</footer>
+
+</html>
