@@ -10,23 +10,27 @@
 </head>
 
 <body>
-  <div id="app">
-    <h1>Ask a Yes/No Question</h1>
-    <form v-on:submit.prevent="getanswer">
-      <input id="box" type="text"> <br>
-      <button type="submit">Ask</button>
-      
-    </form>
-    <div id="main"></div>
+  <div id="page-wrap">
+
+    <div id="app">
+      <h1>Welcome, Please ask a <u>Yes</u> or <u>No</u> question.</h1>
+        <form v-on:submit.prevent="getanswer">
+          <input id="box" type="text"> <br> <br>
+          <button type="submit">Ask</button>
+          
+        </form>
+      <h1 id="input"></h1>
+      <h1 id="main"></h1>
+    </div>
+
   </div>
-  
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
 <script src="javascripts/script.js"></script>
 
 <footer>
-  <p>Copywrite Ben Paine 2019 <a href="https://github.com/BYUCS260/cs260/creativeproject3">GitHub</a></p>
+  <p>Copywrite Ben Paine 2019 <a href="https://github.com/bensama/cs260/tree/master/creativeproject4">GitHub</a></p>
 </footer>
 
 </html>

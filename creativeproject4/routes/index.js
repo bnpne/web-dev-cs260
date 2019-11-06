@@ -8,7 +8,8 @@ router.get('/', function(req, res) {
 
 router.get('/answer', function(req, res) {
   console.log("In answer");
-  res.send(answer);
+  res.send({ data: 'world' });
 });
+
 
 module.exports = router;

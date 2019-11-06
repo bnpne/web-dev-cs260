@@ -9,6 +9,9 @@ var app = new Vue ({
 
             var url = "https://cors-anywhere.herokuapp.com/https://yesno.wtf/api";
 
+            document.getElementById("input").innerHTML = 
+            document.getElementById("box").value;
+
             const main = document.getElementById("main");
             main.innerHTML = "Let Me Think..."
 
@@ -19,7 +22,6 @@ var app = new Vue ({
             .then(data => {
                 console.log(data.answer);
                 
-
                 main.innerHTML = data.answer;
             });
         },
