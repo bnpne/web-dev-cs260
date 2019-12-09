@@ -1,4 +1,4 @@
-# pas-normal-journal
+# vue-twitter
 
 ## Project setup
 ```
