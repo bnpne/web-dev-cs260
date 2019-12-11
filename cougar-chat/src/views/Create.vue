@@ -1,16 +1,18 @@
 <template>
     <div>
         <h1>New Message</h1>
-        <form v-if="creating" @submit.prevent="addTicket">
+        <form v-if="creating" @submit.prevent="addMessage">
             <input v-model="addedName" placeholder="Name">
             <p></p>
-            <textarea v-model="addedProblem"></textarea>
+            <input v-model="addedSubject" placeholder="Subject">
+            <p></p>
+            <textarea v-model="addedMessage"></textarea>
             <br />
             <button type="submit">Submit</button>
         </form>
         <div v-else>
-            <p>Thank you for submitting ticket! We will respond shortly.</p>
-            <p><a @click="toggleForm" href="#">Submit another ticket</a></p>
+            <p>Thank you for submitting.</p>
+            <p><a @click="toggleForm" href="#">Submit another message.</a></p>
         </div>
     </div>
 </template>
@@ -21,21 +23,24 @@ export default {
   data() {
     return {
       creating: true,
-      addedName: '',
-      addedProblem: '',
+      addedName: 'Anonymous',
+      addedSubject: '',
+      addedMessage: '',
     }
   },
   methods: {
     toggleForm() {
       this.creating = !this.creating;
     },
-    addTicket() {
-      this.$store.dispatch("addTicket", {
+    addMessage() {
+      this.$store.dispatch("addMessage", {
         name: this.addedName,
-        problem: this.addedProblem
+        subject: this.addedSubject,
+        message: this.addedMessage,
       });
       this.addedName = "";
-      this.addedProblem = "";
+      this.addedSubject = "";
+      this.addedMessage = "";
       this.creating = false;
     }
   }
