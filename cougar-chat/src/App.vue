@@ -5,6 +5,7 @@
       <div id="nav">
         <button type="button" class="btn btn-warning"><router-link to="/">Home</router-link></button>  
         <button type="button" class="btn btn-success" ><router-link to="/create" >New Message</router-link></button>
+        <button type="button" class="btn btn-info"><router-link to="/login" >Admin</router-link></button>
       </div>
     </div>
     <div class="content">
@@ -13,7 +14,7 @@
       <router-view/>
     </div>
     <div class="footer">
-      <p>
+      <p>© Ben Paine, 2019. <a href="https://github.com/bensama/cs260/tree/master/cougar-chat">GitHub</a></p>
     </div>
   </div>
 </template>
@@ -49,9 +50,16 @@ hr {
   color: #fff;
 }
 
-
-
 .content {
   padding: 10px 100px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 }
 </style>

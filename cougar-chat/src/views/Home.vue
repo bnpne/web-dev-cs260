@@ -2,12 +2,24 @@
 <div>
   <!-- <h1>Cougar Chat</h1> -->
   <div class="grid" >
-    <div v-for="message in messages" v-bind:key="message._id">
-      <div class="card border-info mb-3">
-        <div class="card-header">{{message.name}}</div>
-        <div class="card-body">
-          <h4 class="card-title">{{message.subject}}</h4>
-          <p class="card-text">{{message.message}}</p>
+    
+    <div v-for="message in messages" :key="message._id">
+      <div v-if="message.name == 'Anonymous'">
+        <div class="card border-info mb-3" >
+          <div class="card-header">{{message.name}}</div>
+          <div class="card-body">
+            <h4 class="card-title">{{message.subject}}</h4>
+            <p class="card-text">{{message.message}}</p>
+          </div>
+        </div>
+      </div>
+      <div v-else>
+        <div class="card text-white bg-success mb-3">
+          <div class="card-header">{{message.name}}</div>
+          <div class="card-body">
+            <h4 class="card-title">{{message.subject}}</h4>
+            <p class="card-text">{{message.message}}</p>
+          </div>
         </div>
       </div>
     </div>

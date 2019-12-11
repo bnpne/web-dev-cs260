@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Create from '../views/Create.vue'
+import Admin from '../views/Admin.vue'
+import Login from '../views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +18,16 @@ const routes = [
     name: 'create',
     component: Create
   },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: Admin
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  }
   
 ]
 

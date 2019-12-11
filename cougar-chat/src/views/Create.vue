@@ -1,14 +1,18 @@
 <template>
-    <div>
+    <div class="new">
         <h1>New Message</h1>
         <form v-if="creating" @submit.prevent="addMessage">
-            <input v-model="addedName" placeholder="Name">
+            <div class="name">
+              <input v-model="addedName" placeholder="Name" required>
+              <p class="hint">(Change this if you don't want to be anonymous)</p>
+            </div>
             <p></p>
-            <input v-model="addedSubject" placeholder="Subject">
+            <input v-model="addedSubject" placeholder="Subject" required>
             <p></p>
-            <textarea v-model="addedMessage"></textarea>
+            <textarea v-model="addedMessage" placeholder="Message" required></textarea>
             <br />
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="button" class="btn btn-warning" ><router-link to="/" >Close</router-link></button>
         </form>
         <div v-else>
             <p>Thank you for submitting.</p>
@@ -38,7 +42,7 @@ export default {
         subject: this.addedSubject,
         message: this.addedMessage,
       });
-      this.addedName = "";
+      this.addedName = 'Anonymous';
       this.addedSubject = "";
       this.addedMessage = "";
       this.creating = false;
@@ -48,10 +52,14 @@ export default {
 </script>
 
 <style scoped>
+.new {
+  width: 600px;
+  margin: auto;
+}
 input {
   font-size: 1.2em;
   height: 30px;
-  width: 200px;
+  /* width: 200px; */
 }
 
 textarea {
@@ -64,5 +72,32 @@ textarea {
 button {
   margin-top: 20px;
   font-size: 1.2em;
+}
+
+.name {
+  display: inline;
+}
+
+.hint {
+  color:darkgoldenrod;
+}
+
+
+#nav a {
+  font-weight: bold;
+  color: #fff;
+}
+
+.color {  
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.color-button {
+  font-size: 12pt;
+  width: 50px;
+  height: 50px;
+  
 }
 </style>

@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
   const message = new Message({
     name: req.body.name,
     subject: req.body.subject,
-    message: req.body.message
+    message: req.body.message,
   });
   try {
     await message.save();
